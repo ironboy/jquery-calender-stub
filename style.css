@@ -1,0 +1,121 @@
+/* Google fonts */
+@import url('https://fonts.googleapis.com/css2?family=Protest+Strike&display=swap');
+
+/* 
+Universal box sizing
+see https: //css-tricks.com/box-sizing
+*/
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Protest Strike';
+  margin: 0;
+  background-color: black;
+}
+
+.calender-holder {
+  display: none;
+  background-size: cover;
+  margin: 40px 100px;
+  border-radius: 10px;
+}
+
+.calender {
+  border: 1px solid #000;
+  font-size: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(30px);
+  border-radius: 10px;
+}
+
+/* 
+Clear fix
+see https: //css-tricks.com/snippets/css/clear-fix
+*/
+.calender:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.calender header {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
+}
+
+.calender header span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: block;
+  margin: 0 30px;
+  border-radius: 50%;
+  background-color: green;
+  color: white;
+  width: 50px;
+  height: 50px;
+  padding-left: 4px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.calender header span.prev {
+  left: 0;
+  padding-left: 0;
+  padding-right: 4px;
+}
+
+.calender header img {
+  display: inline-block;
+  height: 220px;
+  aspect-ratio: 1;
+  border-radius: 20px;
+}
+
+.calender>div {
+  float: left;
+  width: calc(100% / 7);
+  text-align: center;
+  border: 1px solid #000;
+  border-right: 0;
+  border-bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calender>div:nth-child(7n+2) {
+  clear: left;
+  border-left: 0;
+}
+
+.calender>.weekday {
+  min-height: 40px;
+}
+
+.calender>.date {
+  min-height: 60px;
+  color: #999;
+  position: relative;
+}
+
+.calender>.date.within-month {
+  color: black;
+}
+
+.week-number {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  font-size: 80%;
+  color: white;
+  padding: 5px;
+  min-width: 50px;
+  border-bottom-right-radius: 5px;
+}
